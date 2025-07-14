@@ -1,31 +1,16 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    public int currentScore = 0;
-    public AudioClip collectSound;
-    void Awake()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        
     }
 
-    public void ModifyScore(int score)
+    // Update is called once per frame
+    void Update()
     {
-        currentScore += score;
-        Debug.Log("Score:" + currentScore);
-        AudioSource.PlayClipAtPoint(collectSound, transform.position);
+        
     }
-        public void ChangeScene(int sceneIndex)
-    {
-        SceneManager.LoadScene(sceneIndex);
-    }
-
 }
