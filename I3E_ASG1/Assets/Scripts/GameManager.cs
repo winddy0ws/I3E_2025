@@ -4,7 +4,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     private int currentScore = 0;
     public TextMeshProUGUI scoreText;
     void Awake()
@@ -20,6 +19,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 
     // Score handling
     public void AddScore(int amount)
