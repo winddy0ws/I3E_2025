@@ -1,16 +1,44 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static GameManager Instance;
+
+    private int currentScore = 0;
+    public TextMeshProUGUI scoreText;
+    void Awake()
     {
-        
+        // Basic singleton pattern
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Score handling
+    public void AddScore(int amount)
     {
-        
+        currentScore += amount;
+        Debug.Log("Score: " + currentScore);
+        UpdateScoreUI();
+    }
+
+    public int GetScore()
+    {
+        return currentScore;
+    }
+
+    private void UpdateScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Artifacts collected: " + currentScore;
+        }
     }
 }
