@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
             }
             else
             {
-                ShowNoKeyWarning();
+                StartCoroutine(ShowNoKeyWarning());
             }
         }
     }
