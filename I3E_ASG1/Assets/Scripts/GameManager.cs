@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Artifacts collected: " + currentScore;
+            scoreText.text = "Donuts collected: " + currentScore;
         }
     }
 }
